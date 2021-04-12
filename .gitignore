@@ -1,6 +1,6 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/java,java-web
-# Edit at https://www.toptal.com/developers/gitignore?templates=java,java-web
+# Created by https://www.toptal.com/developers/gitignore/api/java,netbeans,java-web
+# Edit at https://www.toptal.com/developers/gitignore?templates=java,netbeans,java-web
 
 ### Java ###
 # Compiled class file
@@ -31,4 +31,14 @@ hs_err_pid*
 ## ignoring target file
 target/
 
-# End of https://www.toptal.com/developers/gitignore/api/java,java-web
+### NetBeans ###
+**/nbproject/private/
+**/nbproject/Makefile-*.mk
+**/nbproject/Package-*.bash
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# End of https://www.toptal.com/developers/gitignore/api/java,netbeans,java-web
