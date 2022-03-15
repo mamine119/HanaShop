@@ -66,7 +66,7 @@
         </style>
     </head>
     <body>
-        <c:if test="${sessionScope.USER.roleID eq 'US'}">
+        <c:if test="${sessionScope.USER.roleID eq 'AD'}">
             <div style="position: relative;">
                 <a href="MainController?btnAction=Back_cart" style="text-decoration: none;"><i
                         style="font-size: 50px; margin-top: 20px; margin-left: 20px; color: #545b62;"
@@ -84,10 +84,28 @@
                                     <c:forEach items="${sessionScope.LISTHIS}" var="list">
                                         <table class="table table-borderless">
                                             <thead>
-                                                <tr >
-                                                    <th class="table-success" style="text-align: center;" colspan="3" scope="col">DATE: ${list.date}</th>
-                                                    <th class="table-success" style="text-align: center;" colspan="3" scope="col">STATUS: ${list.statusName}</th>
-                                                </tr>
+                                                <tr>
+                                            <form action="MainController">
+                                                <th class="table-success" style="text-align: center;" colspan="1" scope="col">CUSTOMER: ${list.userName}</th>
+                                                <th class="table-success" style="text-align: center;" colspan="1" scope="col">DATE: ${list.date}</th>
+                                                <th class="table-success" style="text-align: center;" colspan="2" scope="col">
+                                                    <select name="status" style="width: 180px; margin-left: 20px;" id="inputState" class="form-control" value="${param.status}">
+                                                        <c:forEach items="${sessionScope.LISTSTATUS}" var="listStatus">
+                                                            <c:if test="${list.statusName eq listStatus.statusName}">
+                                                                <option value="${listStatus.statusID}" selected="true">${listStatus.statusName}</option>
+                                                            </c:if>
+                                                            <c:if test="${list.statusName ne listStatus.statusName}">
+                                                                <option value="${listStatus.statusID}">${listStatus.statusName}</option>
+                                                            </c:if>
+                                                        </c:forEach>
+                                                    </select>
+                                                </th>
+                                                <th class="table-success" style="text-align: center;" colspan="1" scope="col">
+                                                    <input type="hidden" name="orderId" value="${list.orderID}"> 
+                                                    <button type="submit" name="btnAction" value="updateOrder">Update</button>
+                                                </th>
+                                            </form>
+                                            </tr>
                                             </thead>
                                             <c:set var="list1" value="${list.history.keySet()}"></c:set>
                                             <c:forEach items="${list1}" var="key">
@@ -139,7 +157,7 @@
                                                                 <div style="display: flex;justify-content: center;">
                                                                     <div class="col-12"
                                                                          style="text-align: center;width: 100%; margin-top: 70px;">
-                                                                        <p style="font-size: large;padding-top: 15px;"><fmt:formatNumber type = "number" maxFractionDigits = "0" value = "${pro.price}" />$</p>
+                                                                        <p style="font-size: large;padding-top: 15px;"><fmt:formatNumber type = "number" maxFractionDigits = "0" value = "${pro.price}" />đ</p>
                                                                     </div>
                                                                 </div>
                                                             </td>
@@ -147,7 +165,7 @@
                                                                 <div style="display: flex;justify-content: center;">
                                                                     <div class="col-12"
                                                                          style="text-align: center;width: 100%; margin-top: 70px;">
-                                                                        <p style="font-size: large;padding-top: 15px;"><fmt:formatNumber type = "number" maxFractionDigits = "0" value = "${pro.price*pro.quanity}" />$</p>
+                                                                        <p style="font-size: large;padding-top: 15px;"><fmt:formatNumber type = "number" maxFractionDigits = "0" value = "${pro.price*pro.quanity}" />đ</p>
                                                                     </div>
                                                                 </div>
                                                             </td>
@@ -168,11 +186,6 @@
                                 <form action="MainController">
                                     <div>
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Name</label>
-                                            <input type="text" value="${sessionScope.TXTSEAR}" class="form-control" name="txtSearch" placeholder="Name product">
-                                            <small id="emailHelp" class="form-text text-muted" ></small>
-                                        </div>
-                                        <div class="form-group">
                                             <label for="exampleInputEmail1">Date</label>
                                             <c:if test="${sessionScope.TXTDATE == null || empty sessionScope.TXTDATE}">
                                                 <jsp:useBean id="now" class="java.util.Date" />
@@ -187,11 +200,11 @@
                                         </div>
                                     </div>
                                     <div style="display: flex;justify-content: center;">
-                                        <input type="hidden" name="btnAction" value="searchHis">
+                                        <input type="hidden" name="btnAction" value="order">
                                         <button style="width: 150px;margin-top: 0px !important;margin-bottom: 0px !important; margin-right: 20px"
                                                 class="btn btn-lg btn-secondary btn-block btn-login text-uppercase font-weight-bold mb-2"
                                                 type="submit">Search</button>
-                                        <a style="width: 150px;margin-top: 0px !important;margin-bottom: 0px !important;margin-left: 20px" class="btn btn-lg btn-secondary btn-block btn-login text-uppercase font-weight-bold mb-2" href="MainController?btnAction=searchHis">ALL</a>
+                                        <a style="width: 150px;margin-top: 0px !important;margin-bottom: 0px !important;margin-left: 20px" class="btn btn-lg btn-secondary btn-block btn-login text-uppercase font-weight-bold mb-2" href="MainController?btnAction=order">ALL</a>
                                     </div>
                                 </form>
                             </div>
@@ -200,7 +213,7 @@
                 </div>
             </div>
         </c:if>
-        <c:if test="${sessionScope.USER.roleID ne 'US'}">
+        <c:if test="${sessionScope.USER.roleID ne 'AD'}">
             <div style="background-color: #fff;display: flex;justify-content: center;height: 930px;align-content: center;">
                 <div>
                     <p style="text-align: center">You must login with authorized permissions</p>

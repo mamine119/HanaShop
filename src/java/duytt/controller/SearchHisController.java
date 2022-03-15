@@ -58,12 +58,12 @@ public class SearchHisController extends HttpServlet {
 					String userAccount = user.getUserAccount();
 					String sql = "";
 					if (date.equals("")) {
-						sql = "select b.foodId,[foodName],[image],b.[quanity],b.[price],[date],b.orderId from [dbo].[tblFood]a,[dbo].[tblOderDetail]b,[dbo].[tblOders]c,[dbo].[tblUsers] d where a.foodId=b.foodId and b.orderId=c.orderId and c.userAccount=d.userAccount and c.orderId in (select c.[orderId] from [dbo].[tblFood]a,[dbo].[tblOderDetail]b,[dbo].[tblOders]c,[dbo].[tblUsers] d where a.foodId=b.foodId and b.orderId=c.orderId and c.userAccount=d.userAccount and d.userAccount ='" + userAccount + "' and  foodName like N'%%' group by c.[orderId])";
+						sql = "select b.foodId,[foodName],[image],b.[quanity],b.[price],[date],b.orderId,e.statusName,d.fullName,d.userAccount from [dbo].[tblFood]a,[dbo].[tblOderDetail]b,[dbo].[tblOders]c,[dbo].[tblUsers] d, [dbo].[tblStatus] e where a.foodId=b.foodId and b.orderId=c.orderId and c.userAccount=d.userAccount and c.statusID=e.statusID and c.orderId in (select c.[orderId] from [dbo].[tblFood]a,[dbo].[tblOderDetail]b,[dbo].[tblOders]c,[dbo].[tblUsers] d where a.foodId=b.foodId and b.orderId=c.orderId and c.userAccount=d.userAccount and d.userAccount ='" + userAccount + "' and  foodName like N'%%' group by c.[orderId]) ORDER BY [date] DESC,orderId DESC";
 					} else {
-						sql = "select b.foodId,[foodName],[image],b.[quanity],b.[price],[date],b.orderId from [dbo].[tblFood]a,[dbo].[tblOderDetail]b,[dbo].[tblOders]c,[dbo].[tblUsers] d where a.foodId=b.foodId and b.orderId=c.orderId and c.userAccount=d.userAccount and c.orderId in (select c.[orderId] from [dbo].[tblFood]a,[dbo].[tblOderDetail]b,[dbo].[tblOders]c,[dbo].[tblUsers] d where a.foodId=b.foodId and b.orderId=c.orderId and c.userAccount=d.userAccount and d.userAccount ='" + userAccount + "' and foodName like N'%" + txtsearch + "%'and [date] = '" + date + "' group by c.[orderId])";
+						sql = "select b.foodId,[foodName],[image],b.[quanity],b.[price],[date],b.orderId,e.statusName,d.fullName,d.userAccount from [dbo].[tblFood]a,[dbo].[tblOderDetail]b,[dbo].[tblOders]c,[dbo].[tblUsers] d, [dbo].[tblStatus] e where a.foodId=b.foodId and b.orderId=c.orderId and c.userAccount=d.userAccount and c.statusID=e.statusID and c.orderId in (select c.[orderId] from [dbo].[tblFood]a,[dbo].[tblOderDetail]b,[dbo].[tblOders]c,[dbo].[tblUsers] d where a.foodId=b.foodId and b.orderId=c.orderId and c.userAccount=d.userAccount and d.userAccount ='" + userAccount + "' and foodName like N'%" + txtsearch + "%'and [date] = '" + date + "' group by c.[orderId]) ORDER BY [date] DESC,orderId DESC";
 					}
 					List<History> list = new ProductDAO().getHistory(sql);
-
+                                        
 					session.setAttribute("TXTSEAR", txtsearch);
 					session.setAttribute("TXTDATE", date);
 					session.setAttribute("LISTHIS", list);

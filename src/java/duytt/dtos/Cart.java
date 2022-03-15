@@ -14,12 +14,27 @@ import java.util.Map;
  */
 public class Cart {
 	private String cusID;
+        private Status Status;
 	private Map<String, Product> cart;
 
 	public Cart(String cusID, Map<String, Product> cart) {
 		this.cusID = cusID;
 		this.cart = cart;
 	}
+
+    public Cart(String cusID, Status Status, Map<String, Product> cart) {
+        this.cusID = cusID;
+        this.Status = Status;
+        this.cart = cart;
+    }
+
+    public Status getStatus() {
+        return Status;
+    }
+
+    public void setStatus(Status Status) {
+        this.Status = Status;
+    }
 
 	public Cart() {
 	}

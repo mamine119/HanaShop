@@ -64,6 +64,30 @@
         <servlet-name>AddChangeController</servlet-name>
         <servlet-class>duytt.controller.AddChangeController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>OderController</servlet-name>
+        <servlet-class>duytt.controller.OderController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateOrderController</servlet-name>
+        <servlet-class>duytt.controller.UpdateOrderController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginMailController</servlet-name>
+        <servlet-class>duytt.controller.LoginMailController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReviewPaymentServlet</servlet-name>
+        <servlet-class>duytt.controller.ReviewPaymentServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ExecutePaymentServlet</servlet-name>
+        <servlet-class>duytt.controller.ExecutePaymentServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AuthorizePaymentServlet</servlet-name>
+        <servlet-class>duytt.controller.AuthorizePaymentServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>MainController</servlet-name>
         <url-pattern>/MainController</url-pattern>
@@ -127,6 +151,30 @@
     <servlet-mapping>
         <servlet-name>AddChangeController</servlet-name>
         <url-pattern>/AddChangeController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OderController</servlet-name>
+        <url-pattern>/OderController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateOrderController</servlet-name>
+        <url-pattern>/UpdateOrderController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginMailController</servlet-name>
+        <url-pattern>/LoginMailController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReviewPaymentServlet</servlet-name>
+        <url-pattern>/ReviewPaymentServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ExecutePaymentServlet</servlet-name>
+        <url-pattern>/ExecutePaymentServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AuthorizePaymentServlet</servlet-name>
+        <url-pattern>/AuthorizePaymentServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

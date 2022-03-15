@@ -3,20 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/FPT/HK5/LAB231/New%20Folder%20(2)/Assignment1_ThanThanhDuy/web/history.jsp</file>
-            <file>file:/D:/FPT/HK5/LAB231/New%20Folder%20(2)/Assignment1_ThanThanhDuy/src/java/duytt/daos/ProductDAO.java</file>
-            <file>file:/D:/FPT/HK5/LAB231/New%20Folder%20(2)/Assignment1_ThanThanhDuy/src/java/duytt/controller/MainController.java</file>
-            <file>file:/D:/FPT/HK5/LAB231/New%20Folder%20(2)/Assignment1_ThanThanhDuy/web/product.jsp</file>
-            <file>file:/D:/FPT/HK5/LAB231/New%20Folder%20(2)/Assignment1_ThanThanhDuy/src/java/duytt/controller/RemoveController.java</file>
-            <file>file:/D:/FPT/HK5/LAB231/New%20Folder%20(2)/Assignment1_ThanThanhDuy/web/view_cart.jsp</file>
-            <file>file:/D:/FPT/HK5/LAB231/New%20Folder%20(2)/Assignment1_ThanThanhDuy/src/java/duytt/controller/Cart_AddController.java</file>
-            <file>file:/D:/FPT/HK5/LAB231/New%20Folder%20(2)/Assignment1_ThanThanhDuy/src/java/duytt/controller/AddProductController.java</file>
-            <file>file:/D:/FPT/HK5/LAB231/New%20Folder%20(2)/Assignment1_ThanThanhDuy/src/java/duytt/controller/SearchController.java</file>
-            <file>file:/D:/FPT/HK5/LAB231/New%20Folder%20(2)/Assignment1_ThanThanhDuy/web/pro_create.jsp</file>
-            <file>file:/D:/FPT/HK5/LAB231/New%20Folder%20(2)/Assignment1_ThanThanhDuy/src/java/duytt/controller/LoginController.java</file>
-            <file>file:/D:/FPT/HK5/LAB231/New%20Folder%20(2)/Assignment1_ThanThanhDuy/src/java/duytt/controller/SearchAdController.java</file>
-            <file>file:/D:/FPT/HK5/LAB231/New%20Folder%20(2)/Assignment1_ThanThanhDuy/src/java/duytt/controller/OrderNowController.java</file>
-            <file>file:/D:/FPT/HK5/LAB231/New%20Folder%20(2)/Assignment1_ThanThanhDuy/src/java/duytt/controller/UpdateProController.java</file>
+            <file>file:/D:/ki%207/ISC/bt/HanaShop/src/java/duytt/controller/ReviewPaymentServlet.java</file>
+            <file>file:/D:/ki%207/ISC/bt/HanaShop/web/view_cart.jsp</file>
+            <file>file:/D:/ki%207/ISC/bt/HanaShop/web/product.jsp</file>
+            <file>file:/D:/ki%207/ISC/bt/HanaShop/web/order.jsp</file>
+            <file>file:/D:/ki%207/ISC/bt/HanaShop/src/java/duytt/controller/OrderNowController.java</file>
+            <file>file:/D:/ki%207/ISC/bt/HanaShop/src/java/duytt/controller/ExecutePaymentServlet.java</file>
+            <file>file:/D:/ki%207/ISC/bt/HanaShop/src/java/duytt/paypal/PaymentServices.java</file>
+            <file>file:/D:/ki%207/ISC/bt/HanaShop/src/java/duytt/dtos/User.java</file>
+            <file>file:/D:/ki%207/ISC/bt/HanaShop/web/review.jsp</file>
+            <file>file:/D:/ki%207/ISC/bt/HanaShop/web/history.jsp</file>
+            <file>file:/D:/ki%207/ISC/bt/HanaShop/web/receipt.jsp</file>
+            <file>file:/D:/ki%207/ISC/bt/HanaShop/src/java/duytt/controller/AuthorizePaymentServlet.java</file>
+            <file>file:/D:/ki%207/ISC/bt/HanaShop/src/java/duytt/dtos/OrderDetail.java</file>
+            <file>file:/D:/ki%207/ISC/bt/HanaShop/src/java/duytt/controller/MainController.java</file>
         </group>
     </open-files>
 </project-private>
